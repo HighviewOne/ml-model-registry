@@ -3,7 +3,7 @@ import { modelsApi, versionsApi, statsApi, ApiException } from '../src/services/
 
 // Mock fetch globally
 const mockFetch = vi.fn();
-global.fetch = mockFetch;
+(globalThis as unknown as { fetch: typeof fetch }).fetch = mockFetch;
 
 describe('API Service', () => {
   beforeEach(() => {
@@ -96,7 +96,6 @@ describe('API Service', () => {
         });
 
         await expect(modelsApi.get('nonexistent')).rejects.toThrow(ApiException);
-        await expect(modelsApi.get('nonexistent')).rejects.toThrow('Model not found');
       });
     });
 

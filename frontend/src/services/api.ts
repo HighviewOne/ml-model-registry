@@ -94,7 +94,7 @@ export const modelsApi = {
    * List all models with optional filtering and pagination.
    */
   list: (filters: ModelFilters = {}): Promise<ModelListResponse> => {
-    const query = buildQueryString(filters);
+    const query = buildQueryString(filters as Record<string, unknown>);
     return apiRequest<ModelListResponse>(`/models${query}`);
   },
 
