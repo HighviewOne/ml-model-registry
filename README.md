@@ -218,8 +218,12 @@ See [Deployment Guide](docs/DEPLOYMENT.md) for manual deployment instructions.
 
 **API is deployed at:** https://ml-model-registry-production.up.railway.app
 
-- 📖 [API Documentation (Swagger)](https://ml-model-registry-production.up.railway.app/docs)
-- ❤️ [Health Check](https://ml-model-registry-production.up.railway.app/health)
+| Link | Description |
+|------|-------------|
+| [📖 API Docs](https://ml-model-registry-production.up.railway.app/docs) | Interactive Swagger documentation |
+| [❤️ Health Check](https://ml-model-registry-production.up.railway.app/health) | API health status |
+| [📊 Stats](https://ml-model-registry-production.up.railway.app/api/v1/stats) | Dashboard statistics |
+| [📋 Models](https://ml-model-registry-production.up.railway.app/api/v1/models) | List all models |
 
 ## AI-Assisted Development
 
