@@ -214,6 +214,13 @@ The application is deployed to [TBD] and accessible at: [URL TBD]
 
 See [Deployment Guide](docs/DEPLOYMENT.md) for manual deployment instructions.
 
+## 🚀 Live Demo
+
+**API is deployed at:** https://ml-model-registry-production.up.railway.app
+
+- 📖 [API Documentation (Swagger)](https://ml-model-registry-production.up.railway.app/docs)
+- ❤️ [Health Check](https://ml-model-registry-production.up.railway.app/health)
+
 ## AI-Assisted Development
 
 This project was built with AI assistance. See [AGENTS.md](AGENTS.md) for detailed documentation on:
