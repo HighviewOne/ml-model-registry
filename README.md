@@ -112,7 +112,7 @@ The **ML Model Registry & Deployment Dashboard** provides:
 | API Docs | OpenAPI 3.0 | Contract-first development |
 | Containerization | Docker + Docker Compose | Consistent environments |
 | CI/CD | GitHub Actions | Automated testing & deployment |
-| Cloud | TBD (Railway/Render/Fly.io) | Production hosting |
+| Cloud | Railway | Production hosting |
 
 ## Project Structure
 
@@ -148,8 +148,7 @@ ml-model-registry/
 │   └── tests/
 │       ├── unit/
 │       └── integration/
-└── scripts/
-    └── deploy.sh
+└── requirements.txt
 ```
 
 ## Getting Started
@@ -164,7 +163,7 @@ ml-model-registry/
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/ml-model-registry.git
+git clone https://github.com/HighviewOne/ml-model-registry.git
 cd ml-model-registry
 
 # Start all services
@@ -178,7 +177,21 @@ docker-compose up --build
 
 ### Local Development
 
-See [Development Guide](docs/DEVELOPMENT.md) for detailed setup instructions.
+#### Backend
+```bash
+cd backend
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+pip install -r requirements.txt
+uvicorn app.main:app --reload
+```
+
+#### Frontend
+```bash
+cd frontend
+npm install
+npm run dev
+```
 
 ## API Documentation
 
@@ -210,20 +223,14 @@ docker-compose run --rm backend pytest --cov=app
 
 ## Deployment
 
-The application is deployed to [TBD] and accessible at: [URL TBD]
-
-See [Deployment Guide](docs/DEPLOYMENT.md) for manual deployment instructions.
-
-## 🚀 Live Demo
-
-**API is deployed at:** https://ml-model-registry-production.up.railway.app
+The API is deployed at: https://ml-model-registry-production.up.railway.app
 
 | Link | Description |
 |------|-------------|
-| [📖 API Docs](https://ml-model-registry-production.up.railway.app/docs) | Interactive Swagger documentation |
-| [❤️ Health Check](https://ml-model-registry-production.up.railway.app/health) | API health status |
-| [📊 Stats](https://ml-model-registry-production.up.railway.app/api/v1/stats) | Dashboard statistics |
-| [📋 Models](https://ml-model-registry-production.up.railway.app/api/v1/models) | List all models |
+| [API Docs](https://ml-model-registry-production.up.railway.app/docs) | Interactive Swagger documentation |
+| [Health Check](https://ml-model-registry-production.up.railway.app/health) | API health status |
+| [Stats](https://ml-model-registry-production.up.railway.app/api/v1/stats) | Dashboard statistics |
+| [Models](https://ml-model-registry-production.up.railway.app/api/v1/models) | List all models |
 
 ## AI-Assisted Development
 
@@ -246,4 +253,4 @@ MIT License - see [LICENSE](LICENSE) for details.
 
 ---
 
-**AI Dev Tools Zoomcamp 2025 - Project Attempt 1**
+**AI Dev Tools Zoomcamp 2025 - Project 1**
