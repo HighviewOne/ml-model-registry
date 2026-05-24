@@ -11,7 +11,6 @@ from sqlalchemy.orm import Session
 from app.models.ml_model import MLModel, ModelVersion
 from app.models.schemas import (
     DeploymentStatus,
-    Framework,
     ModelCreate,
     ModelUpdate,
     ModelVersionCreate,
@@ -180,7 +179,7 @@ class ModelService:
                 f"Invalid status transition from {current_status.value} to {new_status.value}"
             )
 
-        db_model.status = new_status.value
+        db_model.status = new_status.value  # type: ignore[assignment]
         self.db.commit()
         self.db.refresh(db_model)
 
@@ -191,7 +190,7 @@ class ModelService:
     ) -> bool:
         """
         Validate deployment status transitions.
-        
+
         Valid transitions:
         - development -> staging
         - staging -> production
@@ -272,9 +271,9 @@ class VersionService:
         # Update model's current version
         model = self.db.query(MLModel).filter(MLModel.id == model_id).first()
         if model:
-            model.current_version = version_data.version
+            model.current_version = version_data.version  # type: ignore[assignment]
             if version_data.metrics:
-                model.metrics = version_data.metrics
+                model.metrics = version_data.metrics  # type: ignore[assignment]
 
         self.db.commit()
         self.db.refresh(db_version)

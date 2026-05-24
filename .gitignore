@@ -4,6 +4,9 @@ __pycache__/
 *$py.class
 *.so
 .Python
+venv/
+.venv/
+env/
 build/
 develop-eggs/
 dist/
@@ -33,6 +36,7 @@ yarn-error.log*
 .pnpm-debug.log*
 dist/
 .vite/
+*.tsbuildinfo
 
 # IDE
 .idea/

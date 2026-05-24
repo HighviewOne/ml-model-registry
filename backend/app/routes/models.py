@@ -39,10 +39,10 @@ def list_models(
     List all models with optional filtering and pagination.
     """
     service = ModelService(db)
-    
+
     framework_value = framework.value if framework else None
     status_value = status.value if status else None
-    
+
     models, total = service.get_models(
         skip=skip,
         limit=limit,
